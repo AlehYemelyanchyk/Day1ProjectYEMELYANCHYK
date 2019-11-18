@@ -31,43 +31,34 @@ public class Task2ServiceTest {
     }
 
     @Test
-    public void takeDaysInMonthIncorrectMonthBiggerTest() {
-        int expected = -1;
-        int month = 13;
-        int year = 2000;
+    public void takeDaysInMonthIsNotLeapYearTest() {
+        int expected = 28;
+        int month = 2;
+        int year = 2002;
         int actual = task2Service.takeDaysInMonth(month, year);
 
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void takeDaysInMonthIncorrectMonthNegativeTest() {
+    public void takeDaysInMonthIncorrectMonthTest() {
         int expected = -1;
-        int month = -1;
+        int[] monthValues = {13, -1, 0};
         int year = 2000;
-        int actual = task2Service.takeDaysInMonth(month, year);
-
-        Assert.assertEquals(expected, actual);
+        for (int month : monthValues) {
+            int actual = task2Service.takeDaysInMonth(month, year);
+            Assert.assertEquals(expected, actual);
+        }
     }
 
     @Test
-    public void takeDaysInMonthIncorrectYearBiggerTest() {
+    public void takeDaysInMonthIncorrectYearTest() {
         int expected = -1;
         int month = 3;
-        int year = 10000;
-        int actual = task2Service.takeDaysInMonth(month, year);
-
-        Assert.assertEquals(expected, actual);
+        int[] yearValues = {-1, 0, 10000};
+        for (int year : yearValues) {
+            int actual = task2Service.takeDaysInMonth(month, year);
+            Assert.assertEquals(expected, actual);
+        }
     }
-
-    @Test
-    public void takeDaysInMonthIncorrectYearZeroOrNegativeTest() {
-        int expected = -1;
-        int month = 3;
-        int year = 0;
-        int actual = task2Service.takeDaysInMonth(month, year);
-
-        Assert.assertEquals(expected, actual);
-    }
-
 }

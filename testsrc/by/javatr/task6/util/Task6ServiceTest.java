@@ -20,21 +20,13 @@ public class Task6ServiceTest {
     }
 
     @Test
-    public void countFullHoursPassMoreThanInDaySecondsTest() {
-        int seconds = 86400;
+    public void countFullHoursPassIncorrectSecondsTest() {
+        int[] secondsValues = {-1, 86400};
         int expected = -1;
-        int actual = task6Service.countFullHoursPass(seconds);
-
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void countFullHoursPassNegativeSecondsTest() {
-        int seconds = -1;
-        int expected = -1;
-        int actual = task6Service.countFullHoursPass(seconds);
-
-        Assert.assertEquals(expected, actual);
+        for (int seconds : secondsValues) {
+            int actual = task6Service.countFullHoursPass(seconds);
+            Assert.assertEquals(expected, actual);
+        }
     }
 
     @Test
