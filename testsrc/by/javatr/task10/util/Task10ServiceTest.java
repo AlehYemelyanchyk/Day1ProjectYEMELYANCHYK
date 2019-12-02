@@ -8,15 +8,14 @@ import org.junit.Test;
  */
 public class Task10ServiceTest {
 
-    private final static double DELTA = 0.0001;
     private Task10Service task10Service = new Task10Service();
 
     @Test
     public void countFunctionFCalculationTest() {
-        double x = 1.0;
-        double expected = 0.0174;
-        double actual = task10Service.countFunctionF(x);
+        String expected = String.format("%-12.4f%.2f\n", 0.0175, 1.00);
+        String[] result = task10Service.returnTableAsArrayOfStrings(1, 2, 1);
+        String actual = result[0];
 
-        Assert.assertEquals(expected, actual, DELTA);
+        Assert.assertEquals(expected, actual);
     }
 }

@@ -5,11 +5,11 @@ package by.javatr.task7.util;
  */
 public class Task7Service {
 
-    public String chooseClosestToZeroPoint(int x1, int y1, int x2, int y2) {
+    public char chooseClosestToZeroPoint(int x1, int y1, int x2, int y2) {
         if (distanceToZero(x1, y1) == distanceToZero(x2, y2)) {
-            return "both A and B";
+            return 'A';
         }
-        return (distanceToZero(x1, y1) < distanceToZero(x2, y2)) ? "A" : "B";
+        return (distanceToZero(x1, y1) < distanceToZero(x2, y2)) ? 'A' : 'B';
     }
 
     private double distanceToZero(int x, int y) {

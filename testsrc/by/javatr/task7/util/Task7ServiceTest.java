@@ -13,24 +13,24 @@ public class Task7ServiceTest {
 
     @Test
     public void chooseClosestToZeroPointAisClosestTest() {
-        String expected = "A";
-        String actual = task7Service.chooseClosestToZeroPoint(1, 1, 2, 2);
+        char expected = 'A';
+        char actual = task7Service.chooseClosestToZeroPoint(1, 1, 2, 2);
 
         Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void chooseClosestToZeroPointBisClosestTest() {
-        String expected = "B";
-        String actual = task7Service.chooseClosestToZeroPoint(3, 3, 2, 2);
+        char expected = 'B';
+        char actual = task7Service.chooseClosestToZeroPoint(3, 3, 2, 2);
 
         Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void chooseClosestToZeroPointEqualityTest() {
-        String expected = "both A and B";
-        String actual = task7Service.chooseClosestToZeroPoint(3, 3, 3, 3);
+        char expected = 'A';
+        char actual = task7Service.chooseClosestToZeroPoint(3, 3, 3, 3);
 
         Assert.assertEquals(expected, actual);
     }

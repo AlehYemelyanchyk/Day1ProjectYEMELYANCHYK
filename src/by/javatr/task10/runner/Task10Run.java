@@ -17,16 +17,16 @@ public class Task10Run {
 
     public static void main(String[] args) {
         System.out.println("Enter point a:");
-        double a = dataScanner.readInteger();
+        double a = dataScanner.readDouble();
         System.out.println("Enter point b:");
-        double b = dataScanner.readInteger();
+        double b = dataScanner.readDouble();
         System.out.println("Enter point h:");
-        double h = dataScanner.readInteger();
+        double h = dataScanner.readDouble();
 
-        System.out.printf("%-12s%s\n", "F(x)", "x");
-        while (a < b) {
-            System.out.printf("%-12.4f%.2f\n", task10Service.countFunctionF(a), a);
-            a += h;
+        String[] table = task10Service.returnTableAsArrayOfStrings(a, b, h);
+        System.out.printf("%-12s%s\n", "F(x)", "tg(x)");
+        for (String s : table) {
+            System.out.print(s);
         }
     }
 }
